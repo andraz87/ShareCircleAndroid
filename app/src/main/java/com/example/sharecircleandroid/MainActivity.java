@@ -1,5 +1,6 @@
 package com.example.sharecircleandroid;
 
+import android.content.Intent;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
@@ -46,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
                 JSONObject object = response.getJSONObject(i);
                 String name = object.getString("imeSkupine");
                 String datumNastanka = object.getString("datumNastanka");
-                data.add(name + " " + datumNastanka);
+                data.add(name + "\n" + datumNastanka.substring(0,19));
             } catch (JSONException e) {
                 e.printStackTrace();
                 Toast.makeText(MainActivity.this, "Napaka pri parsiranju JSON", Toast.LENGTH_SHORT).show();
@@ -63,4 +64,12 @@ public class MainActivity extends AppCompatActivity {
         Log.d("REST error", error.getMessage());
         Toast.makeText(MainActivity.this, "Napaka pri pridobivanju podatkov: " + error.getMessage(), Toast.LENGTH_SHORT).show();
     };
+
+    public static final String EXTRA_MESSAGE = "com.example.universityapp.MESSAGE";
+
+    public void addSkupinaActivity (View view) {
+        Intent intent = new Intent(this, AddSkupinaMainActivity.class);
+        startActivity(intent);
+    }
+
 }

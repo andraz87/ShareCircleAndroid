@@ -19,18 +19,19 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/dodajSkupino"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:text="Button"
+        android:onClick="addSkupinaActivity"
+        android:text="Dodaj skupino"
         app:layout_constraintStart_toEndOf="@+id/PrikaziSkupine"
         app:layout_constraintTop_toTopOf="@+id/PrikaziSkupine" />
 
     <TextView
         android:id="@+id/skupine"
-        android:layout_width="188dp"
-        android:layout_height="611dp"
+        android:layout_width="374dp"
+        android:layout_height="617dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:text="Sezam skupin"
